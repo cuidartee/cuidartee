@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Nuestro Sitio</title>
+    <title>Registro de Usuario</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,6 +43,11 @@
             border-radius: 5px;
             width: 100%;
             text-align: center;
+            cursor: pointer; /* Added cursor for button */
+            border: none; /* Removed default button border */
+        }
+        .btn:hover {
+            background-color: #0056b3; /* Darker shade for hover effect */
         }
         footer {
             text-align: center;
@@ -53,24 +58,75 @@
             width: 100%;
             bottom: 0;
         }
+        #mensajeRegistro {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Registro - Nuestro Sitio</h1>
+        <h1>Registro de Usuario</h1>
     </header>
     <div class="container">
-        <h2>Crea tu Cuenta</h2>
-        <form>
-            <input class="input-field" type="text" placeholder="Nombre Completo" required><br>
-            <input class="input-field" type="email" placeholder="Correo Electrónico" required><br>
-            <input class="input-field" type="password" placeholder="Contraseña" required><br>
-            <input class="input-field" type="password" placeholder="Confirmar Contraseña" required><br>
-            <a href="#" class="btn">Registrarme</a>
+        <form id="registroForm">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" class="input-field" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" class="input-field" required><br><br>
+
+            <label for="contrasena">Contraseña:</label><br>
+            <input type="password" id="contrasena" name="contrasena" class="input-field" required><br><br>
+
+            <label for="confirmar_contrasena">Confirmar Contraseña:</label><br>
+            <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" class="input-field" required><br><br>
+
+            <button type="button" onclick="guardarRegistroLocal()" class="btn">Registrar</button>
         </form>
+
+        <div id="mensajeRegistro"></div>
     </div>
     <footer>
         <p>&copy; 2025 Todos los derechos reservados</p>
     </footer>
+
+    <script>
+        function guardarRegistroLocal() {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const contrasena = document.getElementById('contrasena').value;
+            const confirmarContrasena = document.getElementById('confirmar_contrasena').value;
+            const mensajeRegistro = document.getElementById('mensajeRegistro');
+
+            if (contrasena !== confirmarContrasena) {
+                mensajeRegistro.textContent = 'Las contraseñas no coinciden.';
+                return;
+            }
+
+            const userData = {
+                nombre: nombre,
+                email: email,
+                // ¡ADVERTENCIA! No guardar contraseñas sin cifrar en LocalStorage en una aplicación real.
+                contrasena: contrasena
+            };
+
+            localStorage.setItem('usuarioRegistrado', JSON.stringify(userData));
+            mensajeRegistro.textContent = 'Registro guardado localmente en tu navegador.';
+
+            // Opcional: Limpiar el formulario
+            document.getElementById('registroForm').reset();
+        }
+
+        // Opcional: Mostrar un mensaje si ya hay un registro local
+        window.onload = function() {
+            const usuarioGuardado = localStorage.getItem('usuarioRegistrado');
+            if (usuarioGuardado) {
+                const userData = JSON.parse(usuarioGuardado);
+                document.getElementById('mensajeRegistro').textContent = `Usuario previamente registrado (localmente): ${userData.nombre} (${userData.email})`;
+            }
+        };
+    </script>
 </body>
 </html>
