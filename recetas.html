@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Recetas Médicas</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        .receta-medica {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        h2, h3, h4 {
+            color: #333;
+            margin-top: 0.5em;
+            margin-bottom: 0.3em;
+        }
+        .info-paciente, .info-medico, .info-receta {
+            margin-bottom: 1em;
+            padding: 10px;
+            border-left: 3px solid #5cb85c;
+            background-color: #f9f9f9;
+        }
+        .medicamento {
+            margin-bottom: 1.5em;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            background-color: #fff;
+        }
+        .medicamento p {
+            margin: 0.3em 0;
+        }
+        .instrucciones, .advertencias {
+            margin-top: 1em;
+            padding: 10px;
+            border: 1px dashed #ddd;
+            border-radius: 3px;
+            background-color: #f9f9f9;
+        }
+        .firma {
+            margin-top: 2em;
+            font-style: italic;
+            color: #777;
+            text-align: right;
+        }
+        .renovable {
+            color: green;
+            font-weight: bold;
+        }
+        .no-renovable {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mis Recetas Médicas</h1>
+
+    <section class="receta-medica">
+        <h2>Receta Médica #RM001</h2>
+
+        <div class="info-paciente">
+            <h3>Datos del Paciente</h3>
+            <p><strong>Nombre:</strong> Juan Pérez</p>
+            <p><strong>Identificación:</strong> 12345678</p>
+            <p><strong>Fecha de Nacimiento:</strong> 1980-05-15</p>
+        </div>
+
+        <div class="info-medico">
+            <h3>Datos del Médico</h3>
+            <p><strong>Nombre:</strong> Dra. Ana López</p>
+            <p><strong>Especialidad:</strong> Medicina General</p>
+            <p><strong>Matrícula:</strong> MP 12345</p>
+            <p><strong>Contacto:</strong> Hospital Central, (011) 5555-1212</p>
+        </div>
+
+        <div class="info-receta">
+            <h3>Información de la Receta</h3>
+            <p><strong>Número de Receta:</strong> RM001</p>
+            <p><strong>Fecha de Emisión:</strong> 2025-03-30</p>
+            <p><strong>Indicaciones (Diagnóstico):</strong> Infección respiratoria</p>
+        </div>
+
+        <h3>Medicamentos Recetados</h3>
+        <div class="medicamento">
+            <h4>Amoxicilina (Amoxil) Cápsulas 500mg</h4>
+            <p><strong>Cantidad:</strong> 14</p>
+            <p><strong>Vía de Administración:</strong> Oral</p>
+            <p><strong>Frecuencia:</strong> Cada 8 horas</p>
+            <p><strong>Duración:</strong> 7 días</p>
+            <p><strong>Instrucciones:</strong> Tomar con abundante agua, preferentemente después de las comidas.</p>
+        </div>
+
+        <div class="medicamento">
+            <h4>Paracetamol (Tylenol) Comprimidos 500mg</h4>
+            <p><strong>Cantidad:</strong> 20</p>
+            <p><strong>Vía de Administración:</strong> Oral</p>
+            <p><strong>Frecuencia:</strong> Si es necesario por fiebre o dolor, cada 6 horas.</p>
+            <p><strong>Duración:</strong> Según necesidad</p>
+            <p><strong>Instrucciones:</strong> No exceder la dosis máxima diaria.</p>
+        </div>
+
+        <div class="advertencias">
+            <h3>Advertencias y Precauciones</h3>
+            <ul>
+                <li>Puede causar molestias gastrointestinales.</li>
+                <li>Consulte a su médico si los síntomas persisten por más de 3 días.</li>
+            </ul>
+        </div>
+
+        <div class="dispensacion">
+            <h3>Dispensación</h3>
+            <p><strong>Renovable:</strong> <span class="no-renovable">No</span></p>
+            <p><strong>Fecha de Caducidad de la Receta:</strong> 2025-04-30</p>
+        </div>
+
+        <p class="firma">Dra. Ana López<br>
+        Matrícula: MP 12345<br>
+        Sello del Hospital Central
+        </p>
+    </section>
+
+    <section class="receta-medica">
+        <h2>Receta Médica #RM002</h2>
+
+        <div class="info-paciente">
+            <h3>Datos del Paciente</h3>
+            <p><strong>Nombre:</strong> María González</p>
+            <p><strong>Identificación:</strong> 98765432</p>
+            <p><strong>Fecha de Nacimiento:</strong> 1992-11-20</p>
+        </div>
+
+        <div class="info-medico">
+            <h3>Datos del Médico</h3>
+            <p><strong>Nombre:</strong> Dr. Carlos Rodríguez</p>
+            <p><strong>Especialidad:</strong> Cardiología</p>
+            <p><strong>Matrícula:</strong> MN 67890</p>
+            <p><strong>Contacto:</strong> Consultorio Privado, (011) 4444-3333</p>
+        </div>
+
+        <div class="info-receta">
+            <h3>Información de la Receta</h3>
+            <p><strong>Número de Receta:</strong> RM002</p>
+            <p><strong>Fecha de Emisión:</strong> 2025-03-25</p>
+            <p><strong>Indicaciones (Diagnóstico):</strong> Hipertensión arterial</p>
+        </div>
+
+        <h3>Medicamentos Recetados</h3>
+        <div class="medicamento">
+            <h4>Losartán (Cozaar) Comprimidos 50mg</h4>
+            <p><strong>Cantidad:</strong> 30</p>
+            <p><strong>Vía de Administración:</strong> Oral</p>
+            <p><strong>Frecuencia:</strong> Una vez al día, por la mañana.</p>
+            <p><strong>Duración:</strong> Tratamiento crónico</p>
+            <p><strong>Instrucciones:</strong> Tomar a la misma hora todos los días.</p>
+        </div>
+
+        <div class="advertencias">
+            <h3>Advertencias y Precauciones</h3>
+            <ul>
+                <li>Puede causar mareos en las primeras semanas de tratamiento.</li>
+                <li>Realizar controles de presión arterial regularmente.</li>
+            </ul>
+        </div>
+
+        <div class="dispensacion">
+            <h3>Dispensación</h3>
+            <p><strong>Renovable:</strong> <span class="renovable">Sí</span></p>
+            <p><strong>Renovaciones Permitidas:</strong> 3</p>
+            <p><strong>Fecha de Caducidad de la Receta:</strong> 2025-06-25</p>
+        </div>
+
+        <p class="firma">Dr. Carlos Rodríguez<br>
+        Matrícula: MN 6789
