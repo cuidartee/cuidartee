@@ -1,3 +1,5 @@
 <html>
-  <a href="https://cuidartee.github.io/cuidartee/"><h1>Sitio Web de Cuidarte</h1></a>
+  <body>
+  <h1><a href="https://cuidartee.github.io/cuidartee/"><button>Sitio Web de Cuidarte</button></a></h1>
+  </body>
 </html>
